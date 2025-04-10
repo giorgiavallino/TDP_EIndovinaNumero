@@ -1,6 +1,7 @@
 import random
 
 class Model(object):
+
     def __init__(self):
         self._numero_massimo = 100
         self._tentativi_massimi = 6
@@ -29,6 +30,22 @@ class Model(object):
         if tentativo > self._numero_segreto:
             return -1 # il -1 indica che il numero segreto è più piccolo del tentativo inserito dall'utente
         return 1
+
+    @property # viene fatta solo la property perché non si vuole modificare il valore dell'attributo
+    def numero_massimo(self):
+        return self._numero_massimo
+
+    @property
+    def tentativi_massimi(self):
+        return self._tentativi_massimi
+
+    @property
+    def tentativi_rimasti(self):
+        return self._tentativi_rimasti
+
+    @property
+    def numero_segreto(self):
+        return self._numero_segreto
 
 
 if __name__ == "__main__":
